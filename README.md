@@ -66,6 +66,9 @@ OVERVIEW.md            behaviour and rationale
 ## Development
 
 ```bash
-npm ci
-npm run typecheck
+make setup    # npm ci
+make check    # tsc --noEmit — the gate CI runs
 ```
+
+CI runs `make setup` then `make check` on Node 22.22.1 (pinned in `.nvmrc`, used by both the
+workflow and local dev), on every push to `main` and every pull request.
